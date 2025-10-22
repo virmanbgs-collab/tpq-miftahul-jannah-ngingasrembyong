@@ -1,1 +1,6 @@
-export const load=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch(e){return f}};export const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+export const load = (key, fallback) => {
+  try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch(e){ return fallback; }
+}
+export const save = (key, value) => {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch(e) {}
+}
