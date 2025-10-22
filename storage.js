@@ -1,0 +1,1 @@
+export const load=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch(e){return f}};export const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
